@@ -16,7 +16,7 @@
     $units = $_POST["vUnits"];
     $opcion = $_POST["opcion"];
     $name = $drinks[$opcion]["text"];
-    $price = $drinks[$opcion]["vUnits"];
+    $price = $drinks[$opcion]["precio"];
     $totalPrice = $price * $units;
 
         echo ("<p>you have asked for $units bottles of $name. Total price to pay: $totalPrice  </p>")

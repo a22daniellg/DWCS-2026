@@ -2,7 +2,7 @@
 
 function check(array $lista) {
     $cont = 0;
-    $num = $lista[1];
+    $num = $lista[0];
     foreach($lista as $numero) {
         if ($cont == 3) {
             break;
@@ -23,6 +23,8 @@ function check(array $lista) {
     }
 }
 
+
+$ceu = array( "Italy"=>"Rome", "Luxembourg"=>"Luxembourg", "Belgium"=> "Brussels", "Denmark"=>"Copenhagen", "Finland"=>"Helsinki", "France" => "Paris", "Slovakia"=>"Bratislava", "Slovenia"=>"Ljubljana", "Germany" => "Berlin", "Greece" => "Athens", "Ireland"=>"Dublin", "Netherlands"=>"Amsterdam", "Portugal"=>"Lisbon", "Spain"=>"Madrid", "Sweden"=>"Stockholm", "United Kingdom"=>"London", "Cyprus"=>"Nicosia", "Lithuania"=>"Vilnius", "Czech Republic"=>"Prague", "Estonia"=>"Tallin", "Hungary"=>"Budapest", "Latvia"=>"Riga", "Malta"=>"Valetta", "Austria" => "Vienna", "Poland"=>"Warsaw") ;
 
 ?>
 
@@ -66,6 +68,12 @@ function check(array $lista) {
     else {
         echo "Array sen triples<br>";
     }
+
+
+    foreach($ceu as $country => $capital) {
+            echo ("<p>The capital of $country is $capital</p>");
+            }
     ?>
+    
   </body>
 </html>
