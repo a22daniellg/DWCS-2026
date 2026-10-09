@@ -41,6 +41,15 @@
 <body>
     <?php 
         $firstCalcule = new Calculator();
+        $firstCalcule->setNum1(4);
+        $firstCalcule->setNum2(5);
+        echo  $firstCalcule->getNum1()."<br>";
+        echo  $firstCalcule->getNum2()."<br>";
+
+        $secondCalcule = new Calculator(5,2);
+        echo $secondCalcule."<br>";
+        echo "multiply: ".$secondCalcule->multiply()."<br>";
+        echo "add: ".$secondCalcule->add()."<br>";
     ?>
     
 </body>
