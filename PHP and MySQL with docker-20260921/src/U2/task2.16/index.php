@@ -32,8 +32,8 @@ require_once("Operations.php");
                 <td>" . $student->getSurname() . "</td>
                 <td>" . $student->getDni() . "</td>
                 <td>" . $student->getAge() . "</td>
-                <td><button>update</button></td>
-                <td><button>delete</button></td>
+                <td><button id='modify" . $student->getId() . "'>update</button></td>
+                <td><buttonid='delete" . $student->getId() . "'>delete</button></td>
             </tr>";
         }
         ?>
