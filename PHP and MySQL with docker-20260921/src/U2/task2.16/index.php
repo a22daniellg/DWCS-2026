@@ -34,14 +34,14 @@ require_once("Operations.php");
                 <td>" . $student->getSurname() . "</td>
                 <td>" . $student->getDni() . "</td>
                 <td>" . $student->getAge() . "</td>
-                <td><button id='" . $student->getId() . "'>update</button></td>
-                <td><button id='" . $student->getId() . "'>delete</button></td>
+                <td><a href='modifyStudent.php?studentId=" .  $student->getId() . "'>✏️</a></td>
+                <td><a href='delete.php?studentId=" .  $student->getId() . "'>🗑️</a></td>
             </tr>";
             }
             ?>
         </table>
         <div>
-            <button>Add a new student</button>
+            <a href="newStudent.php">Add a new student</a>
         </div>
     </main>
 </body>

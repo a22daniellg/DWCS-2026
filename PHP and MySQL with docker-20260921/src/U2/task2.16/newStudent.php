@@ -1,3 +1,6 @@
+<?php
+require_once("Operations.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,6 +13,8 @@
 <body>
     <?php
     if (isset($_POST['submit'])) {
+        // Open the database connection
+        $oper = new Operations();
         $student = new Student();
         $student->setDni($_POST['dni']);
         $student->setName($_POST['nome']);
@@ -21,7 +26,7 @@
     }
 
     ?>
-    <form method="POST">
+    <form action="" method="POST">
         <label for="name">Name</label><br>
         <input type="text" id="name" name="nome"><br><br>
         <label for="surname">Surname</label><br>

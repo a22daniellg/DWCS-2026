@@ -45,7 +45,7 @@ require_once("Operations.php");
     // else echo "<br>No guest has been updated";
 
     //Delete
-    $numberOfRows = $oper->deleteStudent(5);
+    $numberOfRows = $oper->deleteStudent(8);
     if ($numberOfRows == 1) echo "<br>Guest deleted from the database";
     else echo "<br>No guest has been deleted";
 

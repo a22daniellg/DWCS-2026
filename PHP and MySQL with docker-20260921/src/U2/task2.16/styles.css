@@ -32,3 +32,9 @@ main {
   align-items: center;
   flex-direction: column;
 }
+button {
+  background-color: green;
+}
+a {
+  text-decoration: none;
+}
