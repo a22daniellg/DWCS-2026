@@ -33,8 +33,11 @@ main {
   flex-direction: column;
 }
 button {
-  background-color: green;
+  background-color: greenyellow;
+  border: none;
+  border-radius: 5px;
 }
 a {
+  color: white;
   text-decoration: none;
 }

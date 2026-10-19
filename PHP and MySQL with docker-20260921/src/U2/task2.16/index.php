@@ -41,7 +41,7 @@ require_once("Operations.php");
             ?>
         </table>
         <div>
-            <a href="newStudent.php">Add a new student</a>
+            <button><a href="newStudent.php">Add a new student</a></button>
         </div>
     </main>
 </body>
