@@ -1,5 +1,40 @@
 <?php
 require_once("Operations.php");
+function test_input($data)
+{
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+
+$oper = new Operations();
+$resultado = $oper->getStudent($_GET["studentId"]);
+if (isset($_POST['submit'])) {
+    try {
+        $student = new Student();
+        $student->setId($resultado->getId());
+        $dni = test_input($_POST['dni']);
+        $student->setDni($dni);
+        $name = test_input($_POST['nome']);
+        $student->setName($name);
+        $surname = test_input($_POST['apelido']);
+        $student->setSurname($surname);
+        $age = test_input($_POST['edad']);
+        $student->setAge($age);
+        $numberOfRows = $oper->updateStudent($student);
+        if ($numberOfRows == 1) header("Location: index.php");
+        else echo "<br>No student has been updated";
+    } catch (PDOException $e) {
+        echo "<br><p style='color:red;'>DB Error: " . $e->getMessage() . "</p><br>";
+    } catch (Exception $e) {
+        echo "<br><p style='color:red;'>Error: " . $e->getMessage() . "</p><br>";
+    } finally {
+        //Close connection
+        $oper->closeConnection();
+    }
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,45 +47,7 @@ require_once("Operations.php");
 </head>
 
 <body>
-    <?php
-    function test_input($data)
-    {
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
-    }
 
-    $oper = new Operations();
-    $resultado = $oper->getStudent($_GET["studentId"]);
-    if (isset($_POST['submit'])) {
-        try {
-            $student = new Student();
-            $student->setId($resultado->getId());
-            $dni = test_input($_POST['dni']);
-            $student->setDni($dni);
-            $name = test_input($_POST['nome']);
-            $student->setName($name);
-            $surname = test_input($_POST['apelido']);
-            $student->setSurname($surname);
-            $age = test_input($_POST['edad']);
-            $student->setAge($age);
-            $numberOfRows = $oper->updateStudent($student);
-            if ($numberOfRows == 1) {
-                header("Location: index.html");
-                exit;
-            } else echo "<br>No student has been updated";
-        } catch (PDOException $e) {
-            echo "<br><p style='color:red;'>DB Error: " . $e->getMessage() . "</p><br>";
-        } catch (Exception $e) {
-            echo "<br><p style='color:red;'>Error: " . $e->getMessage() . "</p><br>";
-        } finally {
-            //Close connection
-            $oper->closeConnection();
-        }
-    }
-
-    ?>
     <form action="" method="POST">
 
         <label for="name">Name</label><br>
@@ -63,7 +60,6 @@ require_once("Operations.php");
         <input type="number" id="age" name="edad" value="<?php echo $resultado->getAge() ?>"><br><br>
         <p>Confirm changes:</p>
         <input type="submit" value="Submit" name="submit" id="send">
-
     </form>
 </body>
 
