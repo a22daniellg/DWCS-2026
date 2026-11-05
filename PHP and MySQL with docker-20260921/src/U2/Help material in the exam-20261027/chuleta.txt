@@ -1,0 +1,27 @@
+You will be able to use zeal.
+
+$query = $this->conn->prepare($sqlString);
+$query->execute();
+$guestList = array(); 
+$myGuest = $query->fetch()
+
+setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
+$_COOKIE[$cookie_name]
+
+try{
+
+    }
+    catch (PDOException $e) {
+        echo "<br><p style='color:red;'>DB Error: " . $e->getMessage() . "</p><br>";
+
+    } catch (Exception $e) {
+        echo "<br><p style='color:red;'>Error: " . $e->getMessage() . "</p><br>";
+    } finally {
+        //Close connection
+        $oper->closeConnection();
+    }
+
+header("Location: https://outrapaxina.com");
+
+<a href="procesa.php?id=2&name=Noel&city=Santiago"
+

@@ -1,0 +1,32 @@
+docker compose run --rm web django-admin startproject password_generator .
+docker compose up
+probar en navegador localhost:8000
+ir al container: attach shell
+python manage.py startapp generator
+settings añadir en INSTALLED_APPS app generator
+url añadir from generator import views
+añadir path("", views.home),
+views añadir funciones ej def home(request):
+                            return render(request, 'generator/home.html')
+crear templates/generator/home.html
+añadir formulario a home
+url añadir path("password/", views.password, name="password")
+
+home añadir action a <form action="{% url 'password' %}">
+
+views añadir funcion para password: def password(request):
+    return render(request, 'generator/password.html')
+
+templates/generator crear password.html
+
+views añadir a funcion de password codigo para generar una contraseña
+    vlength = int(request.GET.get('length', 12))
+    characters = list('abcdefghijklmnopqrstuvwxyz')
+    thepassword = ''
+    for x in range(vlength):
+        thepassword += random.choice(characters)
+
+añadir para mostrar la contraseña generada en password.html
+<p>the new password is: {{ newpassword }}</p>
+
+password.html añadir enlace para volver a home <a href="{% url 'home' %}">back home</a>
