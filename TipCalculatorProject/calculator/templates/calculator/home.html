@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>home calculator</h1>
+    <form action="">
+        Bill amount (€) <input type="number" name="bill" id="bill" step="0.01" min="0" required><br>
+        <label for="tip">Tip</label>
+        <select name="tip" id="tip">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+        </select><br>
+        <label for="people">NUmber of people:</label>
+        <input type="number" name="people" id="people" min="1" max="1"><br>
+        <input type="checkbox" name="roundup" id="roundup">
+        <label for="roundup">Round up</label><br><br>
+        <input type="submit" value="Calculate">
+    </form>
+</body>
+</html>
