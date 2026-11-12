@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Proba blogs</h1>
+    {% for blog in blogs %}
+    <h3>{{ blog.title }}</h3>
+    <p>{{ blog.description }}</p>
+    <p>{{ blog.date|date:'d F Y'|upper }}</p>
+    {% endfor %}
+  </body>
+</html>

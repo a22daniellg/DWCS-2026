@@ -30,3 +30,28 @@ añadir para mostrar la contraseña generada en password.html
 <p>the new password is: {{ newpassword }}</p>
 
 password.html añadir enlace para volver a home <a href="{% url 'home' %}">back home</a>
+
+------------------------------------------------------------------
+crear directorio
+añadir docker-compose dockerfile requirements.txt
+
+docker compose run --rm web django-admin startproject personalPortfolio .
+Importantisimo el . con el espacio
+
+docker compose up e comprobar que se conecta a pagina de inicio localhost:8000
+
+Para generar as apps blog e portfolio:
+docker compose run --rm web python manage.py startapp blog
+docker compose run --rm web python manage.py startapp portfolio
+
+personalPortfolio seria el principal
+ir a settings y añadir las apps
+INSTALLED_APPS 'blog',
+                'portfolio',
+
+
+
+docker docker compose run --rm web python manage.py
+generar un usuario para la base de datos
+
+docker compose run --rm web python manage.py
